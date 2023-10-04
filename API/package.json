@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Metereologic station api for Arduino",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch ./src/server.ts"
+  },
+  "author": "João Victor de Lima Oliveira",
+  "license": "MIT",
+  "devDependencies": {
+    "prisma": "^5.3.1",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.3.1",
+    "@types/serialport": "^8.0.3",
+    "fastify": "^4.23.2",
+    "serialport": "^12.0.0",
+    "zod": "^3.22.3"
+  }
+}

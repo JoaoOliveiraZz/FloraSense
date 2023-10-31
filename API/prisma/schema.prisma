@@ -11,7 +11,10 @@ datasource db {
 }
 
 model weather {
-  id         String   @id @default(uuid())
-  value      Float
-  created_at DateTime
+  id           String @id @default(uuid())
+  temperature  Float
+  humidity     Float
+  brightness   Float
+  hour_created String
+  created_at   String
 }

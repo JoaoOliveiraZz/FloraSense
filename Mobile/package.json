@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/react-native-vector-icons": "^6.4.15",
+    "axios": "^1.6.2",
     "expo": "~49.0.13",
     "expo-status-bar": "~1.6.0",
     "nativewind": "^2.0.11",

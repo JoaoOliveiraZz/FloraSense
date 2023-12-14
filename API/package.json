@@ -10,13 +10,13 @@
   "author": "João Victor de Lima Oliveira",
   "license": "MIT",
   "devDependencies": {
-    "prisma": "^5.3.1",
+    "prisma": "^5.6.0",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
     "@fastify/cors": "^8.4.1",
-    "@prisma/client": "^5.3.1",
+    "@prisma/client": "^5.6.0",
     "@types/fastify-cors": "^2.1.0",
     "@types/serialport": "^8.0.3",
     "fastify": "^4.23.2",

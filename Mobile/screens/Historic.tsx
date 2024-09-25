@@ -15,7 +15,50 @@ interface WeatherData {
 
 export default function Historic({ navigation }) {
   const [arrayPosition, setArrayPosition] = useState<number>(0);
-  const [data, setData] = useState<Array<WeatherData>>([]);
+  const [data, setData] = useState<Array<WeatherData>>([
+    {
+      brightness: 70,
+      humidity: 80,
+      temperature: 32,
+      created_at: "25/09/2024",
+      hour_created: "19:30",
+    },
+    {
+      brightness: 65,
+      humidity: 75,
+      temperature: 30,
+      created_at: "25/09/2024",
+      hour_created: "09:15",
+    },
+    {
+      brightness: 90,
+      humidity: 85,
+      temperature: 33,
+      created_at: "25/09/2024",
+      hour_created: "12:45",
+    },
+    {
+      brightness: 55,
+      humidity: 60,
+      temperature: 28,
+      created_at: "25/09/2024",
+      hour_created: "08:20",
+    },
+    {
+      brightness: 80,
+      humidity: 70,
+      temperature: 31,
+      created_at: "25/09/2024",
+      hour_created: "14:00",
+    },
+    {
+      brightness: 75,
+      humidity: 82,
+      temperature: 34,
+      created_at: "25/09/2024",
+      hour_created: "18:10",
+    },
+  ]);
   const { openDrawer } = navigation;
 
   async function getData() {

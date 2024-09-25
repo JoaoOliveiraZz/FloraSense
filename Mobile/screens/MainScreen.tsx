@@ -44,11 +44,46 @@ interface WeatherData {
 export default function MainScreen({ navigation }) {
   const [data, setData] = useState<Array<WeatherData>>([
     {
-      humidity: 1,
-      temperature: 1,
-      brightness: 1,
-      created_at: "12",
-      hour_created: "12",
+      brightness: 70,
+      humidity: 80,
+      temperature: 32,
+      created_at: "25",
+      hour_created: "19:30",
+    },
+    {
+      brightness: 65,
+      humidity: 75,
+      temperature: 30,
+      created_at: "25",
+      hour_created: "09:15",
+    },
+    {
+      brightness: 90,
+      humidity: 85,
+      temperature: 33,
+      created_at: "25",
+      hour_created: "12:45",
+    },
+    {
+      brightness: 55,
+      humidity: 60,
+      temperature: 28,
+      created_at: "25",
+      hour_created: "08:20",
+    },
+    {
+      brightness: 80,
+      humidity: 70,
+      temperature: 31,
+      created_at: "25",
+      hour_created: "14:00",
+    },
+    {
+      brightness: 75,
+      humidity: 82,
+      temperature: 34,
+      created_at: "25",
+      hour_created: "18:10",
     },
   ]);
   const [todayData, setTodayData] = useState<Array<WeatherData>>([]);
@@ -79,8 +114,52 @@ export default function MainScreen({ navigation }) {
         setData(response.data);
         filterTodayData(response.data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        setData([
+          {
+            brightness: 70,
+            humidity: 80,
+            temperature: 32,
+            created_at: "25",
+            hour_created: "19:30",
+          },
+          {
+            brightness: 65,
+            humidity: 75,
+            temperature: 30,
+            created_at: "26",
+            hour_created: "09:15",
+          },
+          {
+            brightness: 90,
+            humidity: 85,
+            temperature: 33,
+            created_at: "26",
+            hour_created: "12:45",
+          },
+          {
+            brightness: 55,
+            humidity: 60,
+            temperature: 28,
+            created_at: "27",
+            hour_created: "08:20",
+          },
+          {
+            brightness: 80,
+            humidity: 70,
+            temperature: 31,
+            created_at: "27",
+            hour_created: "14:00",
+          },
+          {
+            brightness: 75,
+            humidity: 82,
+            temperature: 34,
+            created_at: "28",
+            hour_created: "18:10",
+          },
+        ]);
+        
       });
     pollingInterval = setTimeout(() => {
       getData();
@@ -90,6 +169,9 @@ export default function MainScreen({ navigation }) {
 
   useEffect(() => {
     getData();
+
+    
+    filterTodayData(data);
 
     return () => clearInterval(pollingInterval);
   }, []);
